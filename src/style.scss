@@ -1,0 +1,98 @@
+.task {
+	font-family: 'Roboto', sans-serif;
+	&__table {
+	}
+	width: 100%;
+	&__content{
+		width: 100%;
+		display: flex;
+	}
+}
+.tableContainer{
+	margin: 30px 20px;
+	display: flex;
+	flex: 0 1 50%;
+	border-radius: 5px;
+	box-shadow: 4px 4px 29px 0px rgba(34, 60, 80, 0.2);
+	width: 50%;
+}
+.table {
+	width: 100%;
+	text-align: center;
+	border-collapse: separate;
+	tr{
+		&:nth-child(even) {
+			background: #ECECEC;
+		}
+		&:nth-child(odd) {
+			background: #F9F9F9;
+		}
+		
+	}
+	td{
+		padding: 14px;
+	}
+	th{
+		padding: 10px 30px;
+		text-align: center;
+		background-color: #DEDEDE;
+		&:last-child{
+			border-radius: 0 5px 0 0 ;
+		}
+		&:first-child{
+			border-radius: 5px 0 0 0 ;
+		}
+		
+	}
+	.cellContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&__text {
+			font-weight: 500;
+		}
+		img{
+			visibility: hidden;
+			transform: rotate(0deg);
+		}
+}
+
+	
+}
+.titleCell {
+	cursor: pointer;
+}
+.titleCell.active{
+	background-color: #BBBBBB;
+	img{
+		visibility: visible;
+	}
+}
+.titleCell.active.sortingUP{
+	img{
+		transform: rotate(180deg);	
+	}
+}
+
+.titleSurname {
+}
+
+.columnAbout {
+	p{
+		display: -webkit-box; /* Используется дляWebKit/Blink */
+		-webkit-box-orient: vertical; /* Вертикальное выравнивание */
+		-webkit-line-clamp: 2; /* Определяет количество строк */
+		overflow: hidden; /* Скрывает текст, который выходит за границы контейнера */
+	}
+	overflow: hidden;
+	width: 30%;
+}
+.titleEyeColor {
+}
+
+.editingTable{
+	margin: 30px 0 ;
+	border-radius: 5px;
+	background-color: red;
+	min-width: 40px;
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TestTask</title>
+  </head>
+  <body>
+	<div class="task">
+		<div class="task__content" id="taskContent">
+			<div class="tableContainer">
+				<table class="task__table table" id="table">
+					<thead class="table__head">
+						<tr class="table__row">
+							<th class="table__cell titleName titleCell">
+								<div class="cellContent">
+									<div class="cellContent__text">
+										Имя
+									</div>
+									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
+								</div>
+							</th>
+							<th class="table__cell titleSurname titleCell">
+								<div class="cellContent">
+									<div class="cellContent__text">
+										Фамилия
+									</div>
+									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
+								</div>
+							</th>
+							<th class="table__cell titleAbout titleCell">
+								<div class="cellContent">
+									<div class="cellContent__text">
+										Описание
+									</div>
+									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
+								</div>
+							</th>
+							<th class="table__cell titleEyeColor titleCell">
+								<div class="cellContent">
+									<div class="cellContent__text">
+										Цвет глаз
+									</div>
+									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
+								</div>
+							</th>
+						 </tr>
+					</thead>
+					<tbody class="table__body">
+						<!-- строки данной таблицы генерируються с помощь функции setData -->
+						<!-- определение setData в файле setData.ts -->
+					</tbody>
+				 </table>
+			</div>
+			 <div class="editingTable">
+			 </div>
+		</div>
+	</div>
+    
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
