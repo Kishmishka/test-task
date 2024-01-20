@@ -5,6 +5,7 @@ export function setSortingListener(activeElement:Element, table:HTMLTableElement
 		
 		for (const element of inactiveElements) {
 			element!.classList.remove('active')
+			element!.classList.remove('sortingUP')
 		}
 	
 		if(activeElement?.classList.contains('active')){
@@ -18,6 +19,7 @@ export function setSortingListener(activeElement:Element, table:HTMLTableElement
 			
 		}else{
 			activeElement!.classList.add('active')
+			sortTableByColumn(table, column, true)
 		}
 		})
 }
