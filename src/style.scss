@@ -9,6 +9,7 @@
 	}
 }
 .tableContainer{
+	min-width: 600px;
 	margin: 30px 20px;
 	display: flex;
 	flex: 0 1 50%;
@@ -16,23 +17,35 @@
 	box-shadow: 4px 4px 29px 0px rgba(34, 60, 80, 0.2);
 	width: 50%;
 }
+
+
 .table {
+	
 	width: 100%;
 	text-align: center;
 	border-collapse: separate;
+	tbody tr:hover{
+		background-color: #F6F6F6;
+	}
+	
 	tr{
-		&:nth-child(even) {
-			background: #ECECEC;
-		}
-		&:nth-child(odd) {
-			background: #F9F9F9;
-		}
+		
+		// &:nth-child(even) {
+		// 	background-color: #ECECEC;
+			
+		// }
+		// &:nth-child(odd) {
+		// 	background-color: #F9F9F9;
+		// }
 		
 	}
 	td{
+		cursor: pointer;
 		padding: 14px;
+		border-bottom: 2px solid #F6F6F6;
 	}
 	th{
+		
 		padding: 10px 30px;
 		text-align: center;
 		background-color: #DEDEDE;
@@ -60,6 +73,10 @@
 }
 .titleCell {
 	cursor: pointer;
+	transition: 0.3s;
+		&:hover{
+			background-color:#D3D3D3;
+		}
 }
 .titleCell.active{
 	background-color: #BBBBBB;
@@ -89,9 +106,73 @@
 .titleEyeColor {
 }
 
-.editingTable{
+.editMenu.active{
+	display: block;
+}
+.editMenu {
+	display: none;
+	box-shadow: 2px 4px 29px 0px rgba(34, 60, 80, 0.2);
 	margin: 30px 0 ;
 	border-radius: 5px;
-	background-color: red;
-	min-width: 40px;
+	background-color: #F9F9F9;
+	height: 100%;
+
+	&__title {
+		display: flex;
+		border-radius: 5px 5px 0 0;
+		text-align: center;
+		background-color: #DEDEDE;
+		font-weight: 500;
+		padding: 15px;
+		position: relative;
+		justify-content: space-between;
+		
+		img{
+			cursor: pointer;
+			&:hover{
+				transform: scale(1.2);
+			}
+			
+		}
+	}
+	&__form {
+	}
 }
+.editForm {
+	
+	&__item {
+		
+		margin: 17px;
+	}
+	
+  
+	&__input {
+		outline: none;
+		border: none;
+		border-bottom: 2px solid#DEDEDE ;
+		background-color: #F9F9F9;
+		font-size: 17px;
+		width: 100%;
+		min-width: 300px;
+		font-family: 'Roboto', sans-serif;
+		&:focus{
+			
+			border-bottom: 2px solid #BBBBBB;
+		}
+	}
+	&__button{
+		padding: 10px 0;
+		text-align: center;
+		border-radius: 5px;
+		margin: 10px 20px;
+		background-color: #DEDEDE;
+		cursor: pointer;
+		transition: 0.3s;
+		&:hover{
+			background-color:#D3D3D3;
+		}
+	}
+	
+}
+
+

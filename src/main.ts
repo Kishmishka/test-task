@@ -5,7 +5,7 @@ import { setSortingListener } from './modules/setSortingListener.ts'
 
 const table:HTMLTableElement = document.getElementById("table") as HTMLTableElement
 
-setData()
+setData(4)
 
 const titleName = document.querySelector(".titleName")!
 const titleSurname = document.querySelector(".titleSurname")!
@@ -14,7 +14,8 @@ const titleEyeColor = document.querySelector(".titleEyeColor")!
 
 setSortingListener(titleName,table,[titleSurname,titleAbout,titleEyeColor],0)
 setSortingListener(titleSurname,table,[titleName,titleAbout,titleEyeColor],1)
-setSortingListener(titleAbout,table,[titleSurname,titleName,titleEyeColor],2)
-setSortingListener(titleEyeColor,table,[titleSurname,titleAbout,titleName],3)
+setSortingListener(titleEyeColor,table,[titleSurname,titleAbout,titleName],2)
+setSortingListener(titleAbout,table,[titleSurname,titleName,titleEyeColor],3)
+
 
 

@@ -32,18 +32,18 @@
 									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
 								</div>
 							</th>
-							<th class="table__cell titleAbout titleCell">
-								<div class="cellContent">
-									<div class="cellContent__text">
-										Описание
-									</div>
-									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
-								</div>
-							</th>
 							<th class="table__cell titleEyeColor titleCell">
 								<div class="cellContent">
 									<div class="cellContent__text">
 										Цвет глаз
+									</div>
+									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
+								</div>
+							</th>
+							<th class="table__cell titleAbout titleCell">
+								<div class="cellContent">
+									<div class="cellContent__text">
+										Описание
 									</div>
 									<img src="/src/icons/sortingArrow.svg"  alt="За стеклом" width="30px" height="30px">
 								</div>
@@ -56,7 +56,29 @@
 					</tbody>
 				 </table>
 			</div>
-			 <div class="editingTable">
+			 <div class="editMenu">
+				<div class="editMenu__title">
+					<div class="editMenu__title-text">
+						Редактирование
+					</div>
+					<img id="closeEditmenu" src="/src/icons/cross.svg" alt="" width="12px" >
+				</div>
+				<div class="editMenu__form editForm">
+					<div class="editForm__item">
+						<input id="editInputName" class="editForm__input" placeholder="Имя">
+					</div>
+					<div class="editForm__item">
+						<input id="editInputSurname" class="editForm__input"  placeholder="Фамилия">
+					</div>
+					<div class="editForm__item">
+						<input id="editInputColorEye" class="editForm__input"  placeholder="Цвет глаз">
+					</div>
+					<div class="editForm__item">
+						<textarea id="editInputAbout" class="editForm__input"  placeholder="Описание"></textarea>
+					</div>
+					<div id="editButton" class="editForm__button"> Сохранить</div>
+				</div>
+				
 			 </div>
 		</div>
 	</div>

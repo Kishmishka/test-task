@@ -1,5 +1,7 @@
 export function sortTableByColumn(table: HTMLTableElement, columnIndex: number, asc: boolean) {
+	const tableBody = document.querySelector(".table__body");
 	const rows = Array.from(table.rows).slice(1);
+
 	const sortedRows = rows.sort((a, b) => {
 	  const cellA = a.cells[columnIndex];
 	  const cellB = b.cells[columnIndex];
@@ -10,6 +12,6 @@ export function sortTableByColumn(table: HTMLTableElement, columnIndex: number, 
  
  
 	for (const row of sortedRows) {
-	  table.appendChild(row);
+		tableBody!.appendChild(row);
 	}
  }
