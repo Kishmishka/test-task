@@ -1,6 +1,6 @@
-import { sortTableByColumn } from "./sortingTableColumn"
+import { sortArrayOfObjects } from "./sortingTableColumn"
 
-export function setSortingListener(activeElement:Element, table:HTMLTableElement, inactiveElements:Element[], column:number){
+export function setSortingListener(activeElement:Element, property:string, inactiveElements:Element[]){
 	activeElement!.addEventListener("click",()=>{
 		
 		for (const element of inactiveElements) {
@@ -10,16 +10,16 @@ export function setSortingListener(activeElement:Element, table:HTMLTableElement
 	
 		if(activeElement?.classList.contains('active')){
 			if(activeElement?.classList.contains('sortingUP')){
-				sortTableByColumn(table, column, true)
+				sortArrayOfObjects(property)
 				activeElement!.classList.remove('sortingUP')
 			}else{
-				sortTableByColumn(table, column, false)
+				sortArrayOfObjects(property,'desc')
 				activeElement!.classList.add('sortingUP')
 			}
 			
 		}else{
 			activeElement!.classList.add('active')
-			sortTableByColumn(table, column, true)
+			sortArrayOfObjects(property)
 		}
 		})
 }

@@ -21,7 +21,7 @@ function handleCloseEditMenu() {
 
 export function showEditMenu(id:string){
 	
-	localStorage.setItem('selectRow', id)
+	sessionStorage.setItem('selectRow', id)
 	const row:HTMLTableRowElement = document.getElementById(id) as HTMLTableRowElement
 	closeEditmenu?.addEventListener("click",handleCloseEditMenu)
 
