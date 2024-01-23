@@ -1,5 +1,6 @@
 import { sortArrayOfObjects } from "./sortingTableColumn"
 
+//вспомогательная функция установки обработчиков события для сортировки таблицы
 export function setSortingListener(activeElement:Element, property:string, inactiveElements:Element[]){
 	activeElement!.addEventListener("click",()=>{
 		

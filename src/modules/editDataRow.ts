@@ -1,44 +1,32 @@
-// import {data} from '../data'
 import { IJsonData } from '../interfaces'
-import { setData } from './setData'
+import { setPage } from './setPagination'
+//получаем измененные значения из формы редактирования
 const editInputName:HTMLInputElement = document.getElementById("editInputName") as HTMLInputElement
 const editInputSurname:HTMLInputElement = document.getElementById("editInputSurname") as HTMLInputElement
 const editInputColorEye:HTMLInputElement = document.getElementById("editInputColorEye") as HTMLInputElement
 const editInputAbout:HTMLInputElement = document.getElementById("editInputAbout") as HTMLInputElement
 
-
-// export function editDataRow(){
-// 	const id:string = localStorage.getItem('selectRow') as string
-// 	const row:HTMLTableRowElement = document.getElementById(id) as HTMLTableRowElement
-	
-// 		row.cells[0].innerHTML =`<p>${editInputName!.value}</p>`   
-//    	row.cells[1].innerHTML =`<p>${editInputSurname!.value}</p>` 
-//   		row.cells[2].innerHTML =`<p>${editInputColorEye!.value}</p>`  
-//    	row.cells[3].innerHTML =`<p>${editInputAbout!.value}</p>`  
-// }
+//Функция редакитрования строки
 export function editDataRow(){
+	//получаем id b данные пользователей из sessionStorage
 	const id:string = sessionStorage.getItem('selectRow') as string
 	const data:IJsonData = JSON.parse(sessionStorage.data) as IJsonData
 	let userData = data.userData
-	// for (let i = 0; i < sessionStorage.data.length; i++) {
-	// 	if(newData[i].id===id){
-	// 		newData[i].name.firstName = editInputName!.value
-	// 		newData[i].name.lastName = editInputSurname!.value
-	// 		newData[i].eyeColor = editInputColorEye!.value
-	// 		newData[i].about = editInputAbout!.value
-	// 	}
-		
-	// }
-	for (let row of userData) {
-		if(row.id===id){
-			console.log(row)
-			row.name.firstName = editInputName!.value
-			row.name.lastName = editInputSurname!.value
-			row.eyeColor = editInputColorEye!.value
-			row.about = editInputAbout!.value
+
+	//присваиваем измененные значения из формы редактирования в новый массив
+	for (let user of userData) {
+		if(user.id===id){
+			console.log(user)
+			user.name.firstName = editInputName!.value
+			user.name.lastName = editInputSurname!.value
+			user.eyeColor = editInputColorEye!.value
+			user.about = editInputAbout!.value
 		}
 	}
-	console.log(userData)
+	// записываем новые значения пользователей в sessionStorage
 	sessionStorage.data = JSON.stringify({userData});
-	setData(0)
+	//находим выбранныю странизу пагинации на момент редактирования
+	const selectPaginationButton = document.querySelector(".pagination__button.active")
+	//устанавливаем найденную страницу
+	setPage(selectPaginationButton!.innerHTML)
 }

@@ -1,15 +1,15 @@
-import './style.scss'
-import './resetStyle.scss'
-import { setData } from './modules/setData.ts'
+import './styles/resetStyle.scss'
+import './styles/task.scss'
+import './styles/table.scss'
+import './styles/editMenu.scss'
+import './styles/pagination.scss'
 import { setSortingListener } from './modules/setSortingListener.ts'
 import {userData} from './data'
-import { setPagination } from './modules/setPagination.ts'
-
-const table:HTMLTableElement = document.getElementById("table") as HTMLTableElement
+import { setPage, setPagination } from './modules/setPagination.ts'
 
 sessionStorage.data =JSON.stringify({userData})
 
-setData(0)
+setPage('1')
 
 const titleName = document.querySelector(".titleName")!
 const titleSurname = document.querySelector(".titleSurname")!

@@ -1,0 +1,76 @@
+.tableContainer{
+	flex-direction: column;
+	min-width: 600px;
+	margin: 30px 20px;
+	display: flex;
+	flex: 0 1 50%;
+	border-radius: 5px;
+	box-shadow: 4px 4px 29px 0px rgba(34, 60, 80, 0.2);
+	width: 50%;
+}
+
+.table {
+	width: 100%;
+	text-align: center;
+	border-collapse: separate;
+	tbody tr:hover{
+		background-color: #F6F6F6;
+	}
+	td{
+		cursor: pointer;
+		padding: 14px;
+		border-bottom: 2px solid #F6F6F6;
+	}
+	th{
+		padding: 10px 30px;
+		text-align: center;
+		background-color: #DEDEDE;
+		&:last-child{
+			border-radius: 0 5px 0 0 ;
+		}
+		&:first-child{
+			border-radius: 5px 0 0 0 ;
+		}
+	}
+	.cellContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&__text {
+			font-weight: 500;
+		}
+		img{
+			visibility: hidden;
+			
+		}
+}	
+}
+
+.titleCell {
+	cursor: pointer;
+	transition: 0.3s;
+		&:hover{
+			background-color:#D3D3D3;
+		}
+}
+.titleCell.active{
+	background-color: #BBBBBB;
+	img{
+		visibility: visible;
+	}
+}
+.titleCell.active.sortingUP{
+	img{
+		transform: rotate(180deg);	
+	}
+}
+.columnAbout {
+	p{
+		display: -webkit-box; /* Используется дляWebKit/Blink */
+		-webkit-box-orient: vertical; /* Вертикальное выравнивание */
+		-webkit-line-clamp: 2; /* Определяет количество строк */
+		overflow: hidden; /* Скрывает текст, который выходит за границы контейнера */
+	}
+	overflow: hidden;
+	width: 30%;
+}

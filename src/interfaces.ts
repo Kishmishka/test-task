@@ -1,3 +1,4 @@
+//интерфэйс пользователья
 export interface IUserData{
 	id: string,
 	name: {
@@ -9,7 +10,7 @@ export interface IUserData{
 	eyeColor: string
 	[key: string]: any;
 }
-
+//вид хранения данных в sessionStorage
 export interface IJsonData{
 userData:IUserData[]
 }

@@ -1,31 +1,12 @@
-// export function sortTableByColumn(table: HTMLTableElement, columnIndex: number, asc: boolean) {
-// 	const tableBody = document.querySelector(".table__body");
-// 	const rows = Array.from(table.rows).slice(1);
+import { IJsonData} from "../interfaces";
+import { setPage } from "./setPagination";
 
-import { IJsonData, IUserData } from "../interfaces";
-import { setData } from "./setData";
-
-// 	const sortedRows = rows.sort((a, b) => {
-// 	  const cellA = a.cells[columnIndex];
-// 	  const cellB = b.cells[columnIndex];
-// 	  const textA = cellA.textContent || '';
-// 	  const textB = cellB.textContent || '';
-// 	  return asc ? textA.localeCompare(textB) : textB.localeCompare(textA);
-// 	});
- 
- 
-// 	for (const row of sortedRows) {
-// 		tableBody!.appendChild(row);
-// 	}
-//  }
-
-
+//функция сортировки таблицы
  export function sortArrayOfObjects( property: string, order: 'asc' | 'desc' = 'asc') {
+	//получаем данные пользователей 
 	const data:IJsonData = JSON.parse(sessionStorage.data) as IJsonData
-	if (!Array.isArray(data.userData) || typeof property !== 'string') {
-	  throw new Error('Invalid input');
-	}
 
+	//сортируем массив данных по свойству
 	 const userData = data.userData.sort((a, b) => {
 	  if (order === 'asc') {
 			if(property==="firstName" || property==="lastName"){
@@ -41,6 +22,8 @@ import { setData } from "./setData";
 		}
 	  }
 	});
+	//записивыем отсортированный массив в sessionStorage
 	sessionStorage.data = JSON.stringify({userData});
-	setData(0)
+	//переходим на первую страницу
+	setPage('1')
  }
