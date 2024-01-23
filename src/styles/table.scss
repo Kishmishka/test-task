@@ -41,7 +41,6 @@
 		}
 		img{
 			visibility: hidden;
-			
 		}
 }	
 }
@@ -73,4 +72,27 @@
 	}
 	overflow: hidden;
 	width: 30%;
+}
+
+.colorContainer{
+	display: flex;
+	font-size: 24px;
+	margin: 0 auto;
+	max-width: 30px;
+
+	border-radius: 200px;
+	color: transparent;
+	
+}
+.colorContainer.red{
+	background-color: red;
+}
+.colorContainer.green{
+	background-color: green;
+}
+.colorContainer.blue{
+	background-color: #218CFF;
+}
+.colorContainer.brown{
+	background-color: brown;
 }

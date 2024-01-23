@@ -27,7 +27,7 @@ for (let i = startPoint; i < endPoint; i++) {
 	for (const key in data.userData[i]) {
 		row.innerHTML = `<td class="table__cell columnName"><p>${data.userData[i].name.firstName}</p></td>
 								<td class="table__cell columnSurname"><p>${data.userData[i].name.lastName}</p></td>
-								<td class="table__cell columnEyeColor"><p>${data.userData[i].eyeColor}</p></td>
+								<td class="table__cell columnEyeColor"><div class="colorContainer ${data.userData[i].eyeColor}">${data.userData[i].eyeColor}</div></td>
 								<td class="table__cell columnAbout"><p>${data.userData[i].about}</p></td>`
 	}
 	//добавление строки в разметку
